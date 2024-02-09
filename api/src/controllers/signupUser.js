@@ -39,7 +39,7 @@ module.exports = async (req, res) => {
     .sign(jwtSecret);
 
   res.cookie('jwt-token', token, {
-    sameSite: 'strict',
+    sameSite: 'none',
     httpOnly: true,
     secure: true
   });
