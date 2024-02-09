@@ -7,7 +7,7 @@ const routes = require('./routes');
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: process.env.FRONT_ORIGIN,
   credentials: true
 }));
 app.use(express.json());
