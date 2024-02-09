@@ -36,10 +36,6 @@ module.exports = async (req, res) => {
     .setExpirationTime('2w')
     .sign(jwtSecret);
 
-  res.cookie('jwt-token', token, {
-    sameSite: 'strict',
-    httpOnly: true,
-    secure: true
-  });
+  res.cookie('jwt-token', token);
   res.status(200).json({ msg: 'Log in success' });
 };
